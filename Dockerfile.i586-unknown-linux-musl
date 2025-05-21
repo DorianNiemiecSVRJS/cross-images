@@ -47,4 +47,6 @@ ENV CARGO_TARGET_I586_UNKNOWN_LINUX_MUSL_LINKER="$CROSS_TOOLCHAIN_PREFIX"gcc \
     CROSS_CMAKE_CRT=musl \
     CROSS_CMAKE_OBJECT_FLAGS="-ffunction-sections -fdata-sections -fPIC -m32 -march=pentium -Wl,-melf_i386"
 
+ENV CARGO_TARGET_I586_UNKNOWN_LINUX_MUSL_RUSTFLAGS="-C link-args=/usr/local/i586-linux-musl/lib/libc.a $CARGO_TARGET_I586_UNKNOWN_LINUX_MUSL_RUSTFLAGS"
+
 RUN sed -e "s#@DEFAULT_QEMU_LD_PREFIX@#$QEMU_LD_PREFIX#g" -i /qemu-runner

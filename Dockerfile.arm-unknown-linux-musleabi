@@ -52,4 +52,6 @@ ENV CARGO_TARGET_ARM_UNKNOWN_LINUX_MUSLEABI_LINKER="$CROSS_TOOLCHAIN_PREFIX"gcc 
     CROSS_CMAKE_CRT=musl \
     CROSS_CMAKE_OBJECT_FLAGS="-ffunction-sections -fdata-sections -fPIC -march=armv6 -marm -mfloat-abi=soft"
 
+ENV CARGO_TARGET_ARM_UNKNOWN_LINUX_MUSLEABI_RUSTFLAGS="-C link-args=/usr/local/arm-linux-musleabi/lib/libc.a $CARGO_TARGET_ARM_UNKNOWN_LINUX_MUSLEABI_RUSTFLAGS"
+
 RUN sed -e "s#@DEFAULT_QEMU_LD_PREFIX@#$QEMU_LD_PREFIX#g" -i /qemu-runner
