@@ -20,6 +20,7 @@ jobs:
           - target: i686-unknown-linux-musl
           - target: aarch64-unknown-linux-musl
           - target: armv7-unknown-linux-musleabihf
+          - target: riscv64gc-unknown-linux-musl
 
     steps:
       - name: Checkout
