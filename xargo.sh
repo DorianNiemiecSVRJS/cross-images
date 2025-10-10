@@ -13,7 +13,7 @@ main() {
     export CARGO_HOME=/tmp/cargo
 
     curl --retry 3 -sSfL https://sh.rustup.rs -o rustup-init.sh
-    sh rustup-init.sh -y --no-modify-path --profile minimal
+    sh rustup-init.sh -y --no-modify-path --profile minimal --default-toolchain 1.88.0
     rm rustup-init.sh
 
     PATH="${CARGO_HOME}/bin:${PATH}" cargo install xargo --root /usr/local
