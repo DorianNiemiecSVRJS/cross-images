@@ -36,7 +36,7 @@ main() {
     # Don't depend on the mirrors of sabotage linux that musl-cross-make uses.
     local linux_headers_site=https://ci-mirrors.rust-lang.org/rustc/sabotage-linux-tarballs
     local linux_ver=headers-4.19.88
-    local gcc_ver=9.4.0
+    local gcc_ver=10.3.0
     local target
     find_argument TARGET target "${@}"
 
